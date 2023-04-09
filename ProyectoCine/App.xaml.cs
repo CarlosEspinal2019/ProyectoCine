@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoCine.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace ProyectoCine
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new CarteleraPage());
         }
 
         protected override void OnStart()

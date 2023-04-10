@@ -2,11 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoCine.Views.FuncionesPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Titulo: "/>
+            <Label Text="{Binding Nombre}"/>
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Fecha : "/>
+            <Label Text="{Binding FechaActual}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Cantidad Boletos : "/>
+            <Entry x:Name="CantidadBoletos" Keyboard="Numeric"/>
+        </StackLayout>
+        <ListView  ItemsSource="{Binding Funciones}" ItemSelected="Funcion_Selected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Cinema}"/>
+                                <Label Text=" - "/>
+                                <Label Text="{Binding Sala}"/>
+                                <Label Text="{Binding Ciudad}"/>                                
+                            </StackLayout>
+                            <Label Text="{Binding Precio}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

@@ -14,6 +14,14 @@ namespace ProyectoCine.Models
         public int Duracion { get; set; }
         public string Imagen { get; set; }
         public List<Funcion> Funciones { get; set; }
+
+        public DateTime FechaActual
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+        }       
     }
 
    }

@@ -23,8 +23,12 @@ namespace ProyectoCine.Views
 
         private async void CargarPeliculas()
         {
-            HttpClient client = new HttpClient();
-			client.BaseAddress = new Uri("https://ec2-44-202-96-176.compute-1.amazonaws.com");
+            var httpClientHandler = new HttpClientHandler();
+
+            httpClientHandler.ServerCertificateCustomValidationCallback =
+            (message, cert, chain, errors) => { return true; };
+            HttpClient client = new HttpClient(httpClientHandler);
+			client.BaseAddress = new Uri("https://44.202.96.176:443");
 
 			var request = await client.GetAsync("/apiC");
 			if (request.IsSuccessStatusCode) 

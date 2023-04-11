@@ -15,7 +15,7 @@
             <Label Text="Cantidad Boletos : "/>
             <Entry x:Name="CantidadBoletos" Keyboard="Numeric"/>
         </StackLayout>
-        <ListView  ItemsSource="{Binding Funciones}" ItemSelected="Funcion_Selected">
+        <ListView  x:Name="listFunciones" HasUnevenRows="True" ItemSelected="Funcion_Selected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -21,22 +21,24 @@ namespace ProyectoCine.Views
 			CargarPeliculas();
 		}
 
-        private async void CargarPeliculas()
+        private async void CargarPeliculas( )
         {
             var httpClientHandler = new HttpClientHandler();
 
             httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, errors) => { return true; };
             HttpClient client = new HttpClient(httpClientHandler);
-			client.BaseAddress = new Uri("https://44.202.96.176:443");
+			client.BaseAddress = new Uri("https://54.162.134.64:443");
 
-			var request = await client.GetAsync("/apiC");
+			var request = await client.GetAsync("/apiPrueba");
 			if (request.IsSuccessStatusCode) 
 			{
 				var responseJson = await request.Content.ReadAsStringAsync();
-				var listado = JsonConvert.DeserializeObject<List<Pelicula>>(responseJson);
-				listPeliculas.ItemsSource = listado;
-			}
+				var listado = JsonConvert.DeserializeObject<List<Pelicula>>(responseJson);                
+                listPeliculas.ItemsSource = listado;
+                
+
+            }
 			else
 			{
 				await DisplayAlert("Lo sentimos", "Ha ocurrido un problema", "ok");
@@ -45,7 +47,8 @@ namespace ProyectoCine.Views
 
 		private async void Pelicula_Selected (object sender, SelectedItemChangedEventArgs e) 
 		{
-			var pelicula = (Pelicula)e.SelectedItem;
+            //string i = idP.Text;
+            var pelicula = (Pelicula)e.SelectedItem;
 			await Navigation.PushAsync(new FuncionesPage(pelicula));
 		}
     }

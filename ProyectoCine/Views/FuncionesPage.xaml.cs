@@ -1,7 +1,9 @@
-﻿using ProyectoCine.Models;
+﻿using Newtonsoft.Json;
+using ProyectoCine.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,9 +21,35 @@ namespace ProyectoCine.Views
 			InitializeComponent ();
 			this.pelicula = pelicula;
 			BindingContext = pelicula;
-		}
+            CargarHorarios();
 
-		private async void Funcion_Selected (object sender, SelectedItemChangedEventArgs e)
+        }
+
+        private async void CargarHorarios( )
+        {
+            var httpClientHandler = new HttpClientHandler();
+
+            httpClientHandler.ServerCertificateCustomValidationCallback =
+            (message, cert, chain, errors) => { return true; };
+            HttpClient client = new HttpClient(httpClientHandler);
+            client.BaseAddress = new Uri("https://54.162.134.64:443");
+
+            var request = await client.GetAsync("/apiPrueba/Funcion.php");
+            if (request.IsSuccessStatusCode)
+            {
+                var responseJson = await request.Content.ReadAsStringAsync();
+                var listado = JsonConvert.DeserializeObject<List<Funcion>>(responseJson);
+                listFunciones.ItemsSource = listado;
+
+
+            }
+            else
+            {
+                await DisplayAlert("Lo sentimos", "Ha ocurrido un problema", "ok");
+            }
+        }
+
+        private async void Funcion_Selected (object sender, SelectedItemChangedEventArgs e)
 		{
 			string cantidad = CantidadBoletos.Text;
 			if (string.IsNullOrEmpty(cantidad))

@@ -12,6 +12,7 @@
                         <Image Source="{Binding Imagen} " WidthRequest="180" HeightRequest="180"/>
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding Nombre}"/>
+                            <Label x:Name="idP" Text="{Binding idPelicula}"/>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Estreno :"/>
                                 <Label Text="{Binding FechaEstreno}"/>

@@ -7,6 +7,7 @@ namespace ProyectoCine.Models
 {
     public class Pelicula 
     {
+        public string idPelicula { get; set; }
         public string Nombre { get; set; }
         public DateTime FechaEstreno { get; set; }
         public string Genero { get; set; }

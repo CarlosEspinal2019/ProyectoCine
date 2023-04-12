@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoCine.Views.RegistroPage"
+             NavigationPage.TitleIconImageSource="cinepolis.png">
+    <StackLayout>
+        <FlexLayout BackgroundColor="#002069" Padding="10">
+            <Label Text="Crear cuenta" TextColor="White" FontSize="22"></Label>
+        </FlexLayout>
+        <StackLayout>
+
+            <Image Source="cinepolis.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,100,0,0"/>
+
+            <StackLayout Padding="5">
+                <Entry x:Name="nombre" FontSize="15" Placeholder="Nombre" TextColor="Black" HorizontalOptions="FillAndExpand" PlaceholderColor="Black" Keyboard="Text"/>
+                <Entry
+                           x:Name="apellido" 
+                           FontSize="15" 
+                           Placeholder="Apellido" 
+                           TextColor="Black"
+                           PlaceholderColor="Black" 
+                           HorizontalOptions="FillAndExpand" 
+                           Keyboard="Text"/>
+                <Entry
+                            x:Name="email" 
+                            Placeholder="Correo Electrónico"  
+                            FontSize="15" 
+                            TextColor="Black"
+                            PlaceholderColor="Black" 
+                            Keyboard="Email" 
+                            HorizontalOptions="FillAndExpand"/>
+                <Entry
+                            x:Name="pass" Placeholder="Contraseña"  
+                            FontSize="15" 
+                            IsPassword="True" 
+                            TextColor="Black"
+                            WidthRequest="300"
+                            PlaceholderColor="Black" 
+                            FontAttributes="None" 
+                            HorizontalOptions="FillAndExpand">
+                </Entry>
+
+                <ImageButton VerticalOptions="Center"
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="20"
+                                 HorizontalOptions="End"
+                                 Source="hide.png"
+                             IsVisible="false"
+                             IsEnabled="false">                   
+
+                </ImageButton>
+
+
+            </StackLayout>
+
+
+            <Button Text="Crear Cuenta" TextColor="#002069" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#F7B700" Margin="50,10,50,10" x:Name="btn_registrar" />
+            <Button Text="¿Ya tienes una cuenta? Inicia sesion."  VerticalOptions="End" Margin="0,0,0,0" HorizontalOptions="Center" FontSize="10" x:Name="btn_enviologin" BackgroundColor="Transparent" TextColor="Black" />
+
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

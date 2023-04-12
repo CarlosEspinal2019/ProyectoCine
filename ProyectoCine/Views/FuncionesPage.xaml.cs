@@ -61,7 +61,8 @@ namespace ProyectoCine.Views
 			int cant = Convert.ToInt32(cantidad);
 			var funcion = (Funcion)e.SelectedItem;
 
-			await Navigation.PushAsync(new ResumenPage(pelicula, funcion, cant));
-		}
+            //await Navigation.PushAsync(new ResumenPage(pelicula, funcion, cant));
+            await Navigation.PushAsync(new ButacasPage(pelicula, funcion, cant));
+        }
 	}
 }

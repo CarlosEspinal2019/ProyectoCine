@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoCine.Views.ResetContasenaPage">
+    <StackLayout>
+        <FlexLayout BackgroundColor="#002069" Padding="10">
+            <Label Text="Recuperar cuenta" TextColor="White" FontSize="22"></Label>
+        </FlexLayout>
+
+        <StackLayout Padding="5">
+
+            <Image Source="cinepolis.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,100,0,0"/>
+
+
+            <StackLayout Orientation="Horizontal" Margin="0,30,0,10">
+                <Entry x:Name="ttemail_user_recu" TextColor="#002069"  FontSize="15" Placeholder="Correo electrónico" PlaceholderColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" Keyboard="Email" />
+            </StackLayout>
+
+
+
+            <Button Text="Restablecer" TextColor="#002069" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#F7B700" Margin="50,10,50,10" x:Name="btn_restablecer" />
+
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

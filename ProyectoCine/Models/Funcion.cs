@@ -9,6 +9,6 @@ namespace ProyectoCine.Models
         public string Cinema { get; set; }
         public string Sala { get; set; }
         public string Ciudad { get; set; }
-        public string Precio { get; set; }
+        public int Precio { get; set; }
     }
 }

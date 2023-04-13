@@ -3,6 +3,7 @@ using ProyectoCine.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -53,42 +54,68 @@ namespace ProyectoCine.Views
                 return;
             }
 
+            //var httpClientHandler = new HttpClientHandler();
+
+            //httpClientHandler.ServerCertificateCustomValidationCallback =
+            //(message, cert, chain, errors) => { return true; };
+            //HttpClient client = new HttpClient(httpClientHandler);
+            //client.BaseAddress = new Uri("https://54.162.134.64:443");
+
+            //var autenticacion = new Autentication
+            //{
+            //    Usuario = usuario,
+            //    Password = password
+            //};
+
+            //string json = JsonConvert.SerializeObject(autenticacion);
+            //StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            //var request = await client.PostAsync("/apiPrueba/seguridad.php", content);
+            //if (request.IsSuccessStatusCode)
+            //{
+            //    var responseJson = await request.Content.ReadAsStringAsync();
+            //    var respuesta = JsonConvert.DeserializeObject<Respuesta>(responseJson);
+
+            //    if(respuesta.EsPermitido) 
+            //    {
+            //       await Navigation.PushAsync(new CarteleraPage());
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("Lo sentimos", respuesta.Mensaje, "Aceptar");
+            //    }
+
+            //}
+            //else
+            //{
+            //    await DisplayAlert("Lo sentimos", "Ha ocurrido un problema", "ok");
+            //}
+
+            //OTRO METODO
+            Login log = new Login
+            {
+                Usuario = Usuario.Text,
+                Password = Password.Text
+            };
+            Uri RequestUri = new Uri("https://54.162.134.64/apiPrueba/seguridad.php");
             var httpClientHandler = new HttpClientHandler();
 
             httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, errors) => { return true; };
-            HttpClient client = new HttpClient(httpClientHandler);
-            client.BaseAddress = new Uri("https://54.162.134.64:443");
-
-            var autenticacion = new Autentication
+            //HttpClient client = new HttpClient(httpClientHandler);
+            var client = new HttpClient(httpClientHandler);
+            var json = JsonConvert.SerializeObject(log);
+            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(RequestUri, contentJson);
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                Usuario = usuario,
-                Password = password
-            };
-
-            string json = JsonConvert.SerializeObject(autenticacion);
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var request = await client.PostAsync("/apiPrueba/seguridad.php", content);
-            if (request.IsSuccessStatusCode)
-            {
-                var responseJson = await request.Content.ReadAsStringAsync();
-                var respuesta = JsonConvert.DeserializeObject<Respuesta>(responseJson);
-                
-                if(respuesta.EsPermitido) 
-                {
-                   await Navigation.PushAsync(new CarteleraPage());
-                }
-                else
-                {
-                    await DisplayAlert("Lo sentimos", respuesta.Mensaje, "Aceptar");
-                }
-
+                await Navigation.PushAsync(new CarteleraPage());
             }
             else
             {
-                await DisplayAlert("Lo sentimos", "Ha ocurrido un problema", "ok");
+                await DisplayAlert("Mensaje", "Datos invalidos", "OK");
             }
+
         }
 
         private void btn_contraseña_Clicked(object sender, EventArgs e)

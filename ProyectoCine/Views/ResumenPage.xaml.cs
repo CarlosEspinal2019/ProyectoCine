@@ -26,7 +26,8 @@ namespace ProyectoCine.Views
 		private async void Finalizar_Clik(object sender, EventArgs e ) 
 		{
 			await DisplayAlert("Felicidades", "La compra ha sido correctamente", "OK");
-		}
+            
+        }
 
     }
 }

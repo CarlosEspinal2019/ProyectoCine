@@ -10,5 +10,7 @@ namespace ProyectoCine.Models
         public string Sala { get; set; }
         public string Ciudad { get; set; }
         public int Precio { get; set; }
+
+        public string idPelicula { get; set; }
     }
 }

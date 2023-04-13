@@ -69,7 +69,7 @@ namespace ProyectoCine.Views
             string json = JsonConvert.SerializeObject(autenticacion);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var request = await client.PostAsync("/apiPrueba/seguridad", content);
+            var request = await client.PostAsync("/apiPrueba/seguridad.php", content);
             if (request.IsSuccessStatusCode)
             {
                 var responseJson = await request.Content.ReadAsStringAsync();

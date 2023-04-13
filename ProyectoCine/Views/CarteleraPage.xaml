@@ -2,33 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoCine.Views.CarteleraPage"
-             Title="CARTELERA">
+             NavigationPage.TitleIconImageSource="cinepolis.png" Title="CARTELERA   " Background="white">
+    
     <ScrollView>
-    <ListView x:Name="listPeliculas" HasUnevenRows="True" ItemSelected="Pelicula_Selected">
+        <ListView x:Name="listPeliculas" HasUnevenRows="True" ItemSelected="Pelicula_Selected" >
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
+                    
+                        <ViewCell>
                     <StackLayout Orientation="Horizontal" Margin="15">
-                        <Image Source="{Binding Imagen} " WidthRequest="180" HeightRequest="180"/>
+                        <Image Source="{Binding Imagen} " WidthRequest="140" HeightRequest="200"/>
                         <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding Nombre}"/>                            
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="15"/>                            
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Estreno :"/>
+                                    <Label Text="Estreno :"  FontSize="13" TextColor="#002069"/>                                
+                            </StackLayout>
+                                <StackLayout Orientation="Horizontal">                                
                                 <Label Text="{Binding FechaEstreno}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Genero :"/>
-                                <Label Text="{Binding Genero}"/>
+                                    <Label Text="Género :" TextColor="#002069" />
+                                    <Label Text="{Binding Genero}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                    <Label Text="Duracion :"/>
-                                    <Label Text="{Binding Recomendacion}"/>
-                                <Label Text="{Binding Duracion}"/>
+                                    <Label Text="Recomendación :" TextColor="#002069"/>
+                                                                    
                             </StackLayout>
-                        </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Recomendacion}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Duración :" TextColor="#002069"/>                                    
+                                    <Label Text="{Binding Duracion}"/>
+                                    <Label Text="minutos" />
+                                </StackLayout>
+                            </StackLayout>
                     </StackLayout>
                 </ViewCell>
-            </DataTemplate>
+                           
+                </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
     </ScrollView>

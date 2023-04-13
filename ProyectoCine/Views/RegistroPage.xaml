@@ -5,11 +5,11 @@
              NavigationPage.TitleIconImageSource="cinepolis.png">
     <StackLayout>
         <FlexLayout BackgroundColor="#002069" Padding="10">
-            <Label Text="Crear cuenta" TextColor="White" FontSize="22"></Label>
+            <Label Text="Crear cuenta" TextColor="#e8b439" FontSize="22" FontAttributes="Bold"></Label>
         </FlexLayout>
         <StackLayout>
 
-            <Image Source="cinepolis.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,100,0,0"/>
+            <Image Source="cinepolis2.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,100,0,0"/>
 
             <StackLayout Padding="5">
                 <Entry x:Name="nombre" FontSize="15" Placeholder="Nombre" TextColor="Black" HorizontalOptions="FillAndExpand" PlaceholderColor="Black" Keyboard="Text"/>
@@ -54,8 +54,8 @@
             </StackLayout>
 
 
-            <Button Text="Crear Cuenta" TextColor="#002069" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#F7B700" Margin="50,10,50,10" x:Name="btn_registrar" />
-            <Button Text="¿Ya tienes una cuenta? Inicia sesion."  VerticalOptions="End" Margin="0,0,0,0" HorizontalOptions="Center" FontSize="10" x:Name="btn_enviologin" BackgroundColor="Transparent" TextColor="Black" />
+            <Button Text="Crear Cuenta" TextColor="White" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#002069" Margin="50,10,50,10" x:Name="btn_registrar" />
+            
 
         </StackLayout>
 

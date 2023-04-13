@@ -17,5 +17,10 @@ namespace ProyectoCine.Views
         {
             InitializeComponent();
         }
+
+        //private async void Resumen_Clicked(object sender, SelectedItemChangedEventArgs e) 
+        //{
+        //    //await Navigation.PushAsync(new ButacasPage(pelicula, funcion, cant));
+        //}
     }
 }

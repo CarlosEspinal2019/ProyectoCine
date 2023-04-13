@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              
              
-             BackgroundColor="#1B1A28"
-             
+             BackgroundColor="#002069"
+             NavigationPage.TitleIconImageSource="cinepolis.png"
              x:Class="ProyectoCine.Views.ButacasPage">
 
 
 
     <StackLayout>
         <FlexLayout BackgroundColor="#002069" Padding="10">
-            <Label Text="Selección de Butacas" TextColor="#DEA21E" FontSize="22"></Label>
+            <Label Text="Selección de Butacas" TextColor="#DEA21E" FontSize="22" FontAttributes="Bold"></Label>
         </FlexLayout>
        
         <ScrollView>
@@ -25,7 +25,7 @@
                     <Path Stroke="#002069" Aspect="Fill" StrokeThickness="10" HeightRequest="30" Data="M0,0S74.587-33.916,148.078-33.916,293.962,0,293.962,0"/>
 
                     <StackLayout  Orientation="Horizontal" Spacing="30" HorizontalOptions="Center">
-                        <Label Text="Abajo" TextColor="white" FontSize="12" VerticalOptions="Center" />
+                        <Label Text="PANTALLA" TextColor="white" FontSize="12" VerticalOptions="Center" />
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
@@ -113,26 +113,26 @@
 
                         <StackLayout Orientation="Horizontal">
                             <Rectangle Stroke="pink" Fill="transparent" StrokeThickness="1" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
-                            <Label Text="Vacío" TextColor="#222222" FontSize="14" VerticalOptions="Center"/>
+                            <Label Text="VACIO" TextColor="White" FontSize="13" VerticalOptions="Center"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
                             <Rectangle Fill="#FECA30" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
-                            <Label Text="Ocupado" TextColor="#222222" FontSize="14" VerticalOptions="Center"/>
+                            <Label Text="RESERVADO" TextColor="White" FontSize="13" VerticalOptions="Center"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
                             <Rectangle Stroke="pink" StrokeThickness="1" Fill="#002069" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
-                            <Label Text="Tu Selección" TextColor="#222222" FontSize="14" VerticalOptions="Center"/>
+                            <Label Text="SELECCIONADO" TextColor="White" FontSize="13" VerticalOptions="Center"/>
                         </StackLayout>
 
                     </StackLayout>
 
                 </StackLayout>
 
-                <Button Grid.Row="2" x:Name="btncomprar"  Text="Comprar boletos"  TextColor="#002069" HeightRequest="40" 
-                    CornerRadius="20" BackgroundColor="#F7B700" HorizontalOptions="FillAndExpand" Margin="5"/>
-
+                <Button Grid.Row="2" x:Name="btncomprar"  Text="CONFIRMAR"  TextColor="#002069" HeightRequest="40" 
+                    CornerRadius="20" BackgroundColor="#F7B700" HorizontalOptions="FillAndExpand" Margin="5" />
+               
             </Grid>
         </ScrollView>
     </StackLayout>

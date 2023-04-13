@@ -2,32 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoCine.Views.FuncionesPage"
-             Title="Funciones">
-    <StackLayout Orientation="Vertical">
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Titulo: "/>
-            <Label Text="{Binding Nombre}"/>
+             Title="FUNCIONES"
+             BackgroundColor="#002069">
+    <StackLayout Orientation="Vertical" Margin="15,20,10,10">
+        <Image Source="{Binding Imagen} " WidthRequest="140" HeightRequest="200"/>
+        
+        <StackLayout Orientation="Horizontal">            
+            <Label Text="Titulo: " TextColor="White" FontSize="20" FontAttributes="Bold"/>
+            <Label Text="{Binding Nombre}" TextColor="#e8b439" FontSize="17" FontAttributes="Bold"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Fecha : "/>
-            <Label Text="{Binding FechaActual}"/>
+            <Label Text="Fecha : " TextColor="White" FontSize="20" FontAttributes="Bold"/>
+            <Label Text="{Binding FechaActual}" TextColor="#e8b439" FontSize="17" FontAttributes="Bold"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Cantidad Boletos : "/>
-            <Entry x:Name="CantidadBoletos" Keyboard="Numeric"/>
-        </StackLayout>
-        <ListView  x:Name="listFunciones" HasUnevenRows="True" ItemSelected="Funcion_Selected">
+        <StackLayout Orientation="Vertical">
+            <Label Text="Cantidad Boletos : " TextColor="White" FontSize="20" FontAttributes="Bold"/>
+            <Entry x:Name="CantidadBoletos" Keyboard="Numeric" WidthRequest="50" TextColor="#e8b439" FontSize="17" FontAttributes="Bold"/>
+            <Label Text="Seleccione función  " TextColor="White" FontSize="20" FontAttributes="Bold"/>
+        </StackLayout>        
+        <ListView  x:Name="listFunciones" HasUnevenRows="True" ItemSelected="Funcion_Selected">            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Vertical">
+                    <ViewCell>                        
+                        <StackLayout Orientation="Vertical">                            
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Cinema}"/>
-                                <Label Text=" - "/>
-                                <Label Text="{Binding Sala}"/>
-                                <Label Text="{Binding Ciudad}"/>                                
+                                <Label Text="{Binding Cinema}" TextColor="White"/>
+                                <Label Text=" - " TextColor="White"/>
+                                <Label Text="{Binding Sala}" TextColor="White"/>
+                                <Label Text="{Binding Ciudad}" TextColor="White"/>                                
                             </StackLayout>
-                            <Label Text="{Binding Precio}"/>
+                            <Label Text="{Binding Precio}" TextColor="White"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

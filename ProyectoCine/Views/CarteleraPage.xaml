@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoCine.Views.CarteleraPage"
-             NavigationPage.TitleIconImageSource="cinepolis.png" Title="CARTELERA   " Background="white">
+             Title="CARTELERA   " Background="white">
     
     <ScrollView>
         <ListView x:Name="listPeliculas" HasUnevenRows="True" ItemSelected="Pelicula_Selected" >

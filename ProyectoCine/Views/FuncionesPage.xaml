@@ -14,16 +14,16 @@
         <StackLayout Orientation="Horizontal">
             <Label Text="Fecha : " TextColor="White" FontSize="20" FontAttributes="Bold"/>
             <Label Text="{Binding FechaActual}" TextColor="#e8b439" FontSize="17" FontAttributes="Bold"/>
-        </StackLayout>
+        </StackLayout>        
         <StackLayout Orientation="Vertical">
             <Label Text="Cantidad Boletos : " TextColor="White" FontSize="20" FontAttributes="Bold"/>
             <Entry x:Name="CantidadBoletos" Keyboard="Numeric" WidthRequest="50" TextColor="#e8b439" FontSize="17" FontAttributes="Bold"/>
             <Label Text="Seleccione función  " TextColor="White" FontSize="20" FontAttributes="Bold"/>
-        </StackLayout>        
-        <ListView  x:Name="listFunciones" HasUnevenRows="True" ItemSelected="Funcion_Selected">            
+        </StackLayout>
+        <ListView  x:Name="listFunciones" HasUnevenRows="True" ItemSelected="Funcion_Selected" SeparatorColor="#e8b439">            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>                        
+                    <ViewCell >                        
                         <StackLayout Orientation="Vertical">                            
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Cinema}" TextColor="White"/>
@@ -31,7 +31,12 @@
                                 <Label Text="{Binding Sala}" TextColor="White"/>
                                 <Label Text="{Binding Ciudad}" TextColor="White"/>                                
                             </StackLayout>
+                            <StackLayout Orientation="Horizontal"  Margin="0,0,0,30">
+                             <Label Text="Precio :" TextColor="White"/>
                             <Label Text="{Binding Precio}" TextColor="White"/>
+                             <Label Text="Horario :" TextColor="White"/>
+                            <Label Text="{Binding Horario}" TextColor="White"/>
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

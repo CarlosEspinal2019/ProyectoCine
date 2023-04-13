@@ -11,7 +11,7 @@ namespace ProyectoCine
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CarteleraPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

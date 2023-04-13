@@ -54,7 +54,7 @@
             </StackLayout>
 
 
-            <Button Text="Crear Cuenta" TextColor="White" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#002069" Margin="50,10,50,10" x:Name="btn_registrar" />
+            <Button Text="Crear Cuenta" TextColor="White" HeightRequest="40" MinimumWidthRequest="300" CornerRadius="20" BackgroundColor="#002069" Margin="50,10,50,10" x:Name="btn_registrar" Clicked="Registro_Clicker"/>
             
 
         </StackLayout>

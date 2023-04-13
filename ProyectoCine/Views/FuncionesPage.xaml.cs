@@ -16,17 +16,17 @@ namespace ProyectoCine.Views
 	public partial class FuncionesPage : ContentPage
 	{
 		private Pelicula pelicula;
-		public FuncionesPage (Pelicula pelicula)
+		public FuncionesPage (Pelicula pelicula, int idCine)
 		{
 			InitializeComponent ();
 			this.pelicula = pelicula;
             string idPelicula = pelicula.idPelicula;
 			BindingContext = pelicula;
-            CargarHorarios(idPelicula);
+            CargarHorarios(idPelicula,idCine);
 
         }
 
-        private async Task<string> CargarHorarios( string idPelicula )
+        private async Task<string> CargarHorarios( string idPelicula, int idCine )
         {
             //var httpClientHandler = new HttpClientHandler();
 
@@ -52,7 +52,7 @@ namespace ProyectoCine.Views
             
             string apiUrl = "https://54.162.134.64/apiPrueba/Funcion.php?id="; // Reemplaza esta URL con la URL de tu API
             string url = apiUrl + idPelicula; // Agrega el parámetro ID en la URL
-
+            //string url1 = url + "&?id=" + idPelicula; 
             try
             {
                 var httpClientHandler = new HttpClientHandler();
@@ -93,9 +93,9 @@ namespace ProyectoCine.Views
 			int cant = Convert.ToInt32(cantidad);
 			var funcion = (Funcion)e.SelectedItem;
 
-            //await Navigation.PushAsync(new ResumenPage(pelicula, funcion, cant));
+            await Navigation.PushAsync(new ResumenPage(pelicula, funcion, cant));
             //await Navigation.PushAsync(new ButacasPage(pelicula, funcion, cant));
-            await Navigation.PushAsync(new DulceriaPage(pelicula, funcion, cant));
+            //await Navigation.PushAsync(new DulceriaPage(pelicula, funcion, cant));
         }
 	}
 }

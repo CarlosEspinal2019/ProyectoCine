@@ -109,7 +109,8 @@ namespace ProyectoCine.Views
             var response = await client.PostAsync(RequestUri, contentJson);
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                await Navigation.PushAsync(new CarteleraPage());
+                //await Navigation.PushAsync(new CarteleraPage());
+                await Navigation.PushAsync(new SeleccionCiudadPage());
             }
             else
             {

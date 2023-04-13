@@ -22,7 +22,9 @@ namespace ProyectoCine.Models
             {
                 return DateTime.Now;
             }
-        }       
+        }
+
+        public string idCine { get; set; }
     }
 
    }
